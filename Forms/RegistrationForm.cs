@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TicketSalesPanel
+namespace TicketSalesPanel.Forms
 {
-    public partial class Form1 : Form
+    public partial class RegistrationForm : Form
     {
-        public Form1()
+        public RegistrationForm()
         {
             InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
