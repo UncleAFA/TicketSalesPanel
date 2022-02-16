@@ -16,12 +16,12 @@ namespace TicketSalesPanel.Forms
 
         // строка подключения к MS Access
         // вариант 1
-        private string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=итог.mdb;";
+        private readonly string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=итог.mdb;";
         // вариант 2
         //public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=итог.mdb;";
 
         //переменные для формирования номера билета
-        private string LettersPass = "AAR";
+        private readonly string LettersPass = "AAR";
 
         private void BackButton_Click(object sender, EventArgs e)
         {
@@ -30,15 +30,20 @@ namespace TicketSalesPanel.Forms
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            Passenger NewPassenger = new Passenger();
-            NewPassenger.Name = NameTextBox.Text;
-            NewPassenger.Surname = SurnameTextBox.Text;
-            NewPassenger.MiddleName = MiddleNameTextBox.Text;
-            NewPassenger.PassportSeriesNumber = PassportSeriesTextBox.Text + PassportNumberTextBox.Text;
-            NewPassenger.Address = ResidentialAddressTextBox.Text;
-            NewPassenger.PhoneNumber = PhoneNumberTextBox.Text;
+            Passenger NewPassenger = new Passenger
+            {
+                Name = NameTextBox.Text,
+                Surname = SurnameTextBox.Text,
+                MiddleName = MiddleNameTextBox.Text,
+                PassportSeriesNumber = PassportSeriesTextBox.Text + PassportNumberTextBox.Text,
+                Address = ResidentialAddressTextBox.Text,
+                PhoneNumber = PhoneNumberTextBox.Text
+            };
             bool check = CheckingAvailableSeats(TypeOfSalonComboBox.SelectedItem.ToString(), FlightNumberСomboBox.SelectedItem.ToString());
             NewPass.TypeOfSalon = TypeOfSalonComboBox.SelectedItem.ToString();
+            NewPass.FlightNumber = FlightNumberСomboBox.SelectedItem.ToString();
+            NewPass.PassengerFIO = NewPassenger.Name + NewPassenger.Surname + NewPassenger.MiddleName;
+            NewPass.Document = NewPassenger.PassportSeriesNumber;
             if (!check)
             {
                 DialogResult result = MessageBox.Show("Предложите пассажиру поменять тип салона! (да - если он согласне, нет - если он отказался)","Места в этой категории заняты", MessageBoxButtons.YesNo);
@@ -72,25 +77,23 @@ namespace TicketSalesPanel.Forms
             myConnection.Open();
 
             // текст запроса
-            string query = $"SELECT Кол_во_свободных_мест, Цена_билета FROM Места WHERE №рейса = '{FlightNumber}'";
+            string query = $"SELECT Цена_билета FROM Места WHERE №рейса = '{FlightNumber}'";
             // создаем объект OleDbCommand для выполнения запроса к БД MS Access
             OleDbCommand command = new OleDbCommand(query, myConnection);
             // получаем объект OleDbDataReader для чтения табличного результата запроса SELECT
             OleDbDataReader reader = command.ExecuteReader();
 
             
-            int FreeSeats = -1;//Переменна для количество свободных мест на рейс
             while (reader.Read())
             {
-                FreeSeats = Convert.ToInt32(reader[0].ToString());
-                NewPass.Coast = Convert.ToInt32(reader[1].ToString());
+                NewPass.Coast = Convert.ToInt32(reader[0].ToString());
             }
 
             myConnection.Close();
-            RegistrationSeat(FlightNumber, FreeSeats);
+            RegistrationSeat(FlightNumber);
 
         }
-        private void RegistrationSeat(string FlightNumber, int FreeSeats)
+        private void RegistrationSeat(string FlightNumber)
         {
             int[] SeatsArr = new int[10];
             int ThisNumSeat = -1;

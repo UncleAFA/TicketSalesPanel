@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace TicketSalesPanel
 {
-    class Pass
+    public class Pass
     {
         public int NumPass;
         public int NumSeat;
         public int Coast;
-        public string NumFlightNumber;
+        public string FlightNumber;
         public string TypeOfSalon;
+        public string PassengerFIO;
+        public string Document;
         //Добавить еще поля
     }
 }
