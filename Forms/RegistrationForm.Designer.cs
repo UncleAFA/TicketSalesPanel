@@ -29,6 +29,7 @@ namespace TicketSalesPanel.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
@@ -45,12 +46,21 @@ namespace TicketSalesPanel.Forms
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
             this.NextButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.FlightNumberСomboBox = new System.Windows.Forms.ComboBox();
+            this.TypeOfSalonComboBox = new System.Windows.Forms.ComboBox();
+            this.FlightNumberLabel = new System.Windows.Forms.Label();
+            this.TypeOfSalonLabel = new System.Windows.Forms.Label();
+            this.итогDataSet = new TicketSalesPanel.итогDataSet();
+            this.рейсыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.рейсыTableAdapter = new TicketSalesPanel.итогDataSetTableAdapters.РейсыTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.итогDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.рейсыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(87, 6);
+            this.NameLabel.Location = new System.Drawing.Point(87, 7);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(29, 13);
             this.NameLabel.TabIndex = 0;
@@ -65,7 +75,7 @@ namespace TicketSalesPanel.Forms
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(88, 68);
+            this.SurnameTextBox.Location = new System.Drawing.Point(88, 62);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(159, 20);
             this.SurnameTextBox.TabIndex = 3;
@@ -73,7 +83,7 @@ namespace TicketSalesPanel.Forms
             // SurnameLabel
             // 
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(87, 51);
+            this.SurnameLabel.Location = new System.Drawing.Point(87, 46);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(56, 13);
             this.SurnameLabel.TabIndex = 2;
@@ -81,7 +91,7 @@ namespace TicketSalesPanel.Forms
             // 
             // MiddleNameTextBox
             // 
-            this.MiddleNameTextBox.Location = new System.Drawing.Point(88, 116);
+            this.MiddleNameTextBox.Location = new System.Drawing.Point(88, 101);
             this.MiddleNameTextBox.Name = "MiddleNameTextBox";
             this.MiddleNameTextBox.Size = new System.Drawing.Size(159, 20);
             this.MiddleNameTextBox.TabIndex = 5;
@@ -89,7 +99,7 @@ namespace TicketSalesPanel.Forms
             // MiddleNameLabel
             // 
             this.MiddleNameLabel.AutoSize = true;
-            this.MiddleNameLabel.Location = new System.Drawing.Point(87, 99);
+            this.MiddleNameLabel.Location = new System.Drawing.Point(87, 85);
             this.MiddleNameLabel.Name = "MiddleNameLabel";
             this.MiddleNameLabel.Size = new System.Drawing.Size(54, 13);
             this.MiddleNameLabel.TabIndex = 4;
@@ -97,7 +107,7 @@ namespace TicketSalesPanel.Forms
             // 
             // PassportSeriesTextBox
             // 
-            this.PassportSeriesTextBox.Location = new System.Drawing.Point(88, 166);
+            this.PassportSeriesTextBox.Location = new System.Drawing.Point(88, 140);
             this.PassportSeriesTextBox.Name = "PassportSeriesTextBox";
             this.PassportSeriesTextBox.Size = new System.Drawing.Size(47, 20);
             this.PassportSeriesTextBox.TabIndex = 7;
@@ -105,7 +115,7 @@ namespace TicketSalesPanel.Forms
             // PassportSeriesLabel
             // 
             this.PassportSeriesLabel.AutoSize = true;
-            this.PassportSeriesLabel.Location = new System.Drawing.Point(87, 149);
+            this.PassportSeriesLabel.Location = new System.Drawing.Point(87, 124);
             this.PassportSeriesLabel.Name = "PassportSeriesLabel";
             this.PassportSeriesLabel.Size = new System.Drawing.Size(41, 13);
             this.PassportSeriesLabel.TabIndex = 6;
@@ -113,7 +123,7 @@ namespace TicketSalesPanel.Forms
             // 
             // PassportNumberTextBox
             // 
-            this.PassportNumberTextBox.Location = new System.Drawing.Point(150, 166);
+            this.PassportNumberTextBox.Location = new System.Drawing.Point(150, 140);
             this.PassportNumberTextBox.Name = "PassportNumberTextBox";
             this.PassportNumberTextBox.Size = new System.Drawing.Size(97, 20);
             this.PassportNumberTextBox.TabIndex = 9;
@@ -121,7 +131,7 @@ namespace TicketSalesPanel.Forms
             // PassportNumberLabel
             // 
             this.PassportNumberLabel.AutoSize = true;
-            this.PassportNumberLabel.Location = new System.Drawing.Point(149, 149);
+            this.PassportNumberLabel.Location = new System.Drawing.Point(149, 124);
             this.PassportNumberLabel.Name = "PassportNumberLabel";
             this.PassportNumberLabel.Size = new System.Drawing.Size(93, 13);
             this.PassportNumberLabel.TabIndex = 8;
@@ -129,7 +139,7 @@ namespace TicketSalesPanel.Forms
             // 
             // ResidentialAddressTextBox
             // 
-            this.ResidentialAddressTextBox.Location = new System.Drawing.Point(88, 214);
+            this.ResidentialAddressTextBox.Location = new System.Drawing.Point(88, 179);
             this.ResidentialAddressTextBox.Name = "ResidentialAddressTextBox";
             this.ResidentialAddressTextBox.Size = new System.Drawing.Size(159, 20);
             this.ResidentialAddressTextBox.TabIndex = 11;
@@ -137,7 +147,7 @@ namespace TicketSalesPanel.Forms
             // ResidentialAddressLabel
             // 
             this.ResidentialAddressLabel.AutoSize = true;
-            this.ResidentialAddressLabel.Location = new System.Drawing.Point(87, 197);
+            this.ResidentialAddressLabel.Location = new System.Drawing.Point(87, 163);
             this.ResidentialAddressLabel.Name = "ResidentialAddressLabel";
             this.ResidentialAddressLabel.Size = new System.Drawing.Size(103, 13);
             this.ResidentialAddressLabel.TabIndex = 10;
@@ -145,7 +155,7 @@ namespace TicketSalesPanel.Forms
             // 
             // PhoneNumberTextBox
             // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(88, 267);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(88, 218);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(159, 20);
             this.PhoneNumberTextBox.TabIndex = 13;
@@ -153,7 +163,7 @@ namespace TicketSalesPanel.Forms
             // PhoneNumberLabel
             // 
             this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(87, 250);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(87, 202);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
             this.PhoneNumberLabel.Size = new System.Drawing.Size(93, 13);
             this.PhoneNumberLabel.TabIndex = 12;
@@ -161,16 +171,17 @@ namespace TicketSalesPanel.Forms
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(88, 311);
+            this.NextButton.Location = new System.Drawing.Point(88, 343);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(159, 23);
             this.NextButton.TabIndex = 14;
             this.NextButton.Text = "Продолжить";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(88, 361);
+            this.BackButton.Location = new System.Drawing.Point(88, 372);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(159, 23);
             this.BackButton.TabIndex = 15;
@@ -178,11 +189,74 @@ namespace TicketSalesPanel.Forms
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // FlightNumberСomboBox
+            // 
+            this.FlightNumberСomboBox.FormattingEnabled = true;
+            this.FlightNumberСomboBox.Items.AddRange(new object[] {
+            "В2-1957",
+            "ВА872",
+            "ВТ6820",
+            "ЛН3187",
+            "ПЛ189",
+            "ТК1408",
+            "ЮТ246"});
+            this.FlightNumberСomboBox.Location = new System.Drawing.Point(88, 257);
+            this.FlightNumberСomboBox.Name = "FlightNumberСomboBox";
+            this.FlightNumberСomboBox.Size = new System.Drawing.Size(159, 21);
+            this.FlightNumberСomboBox.TabIndex = 16;
+            // 
+            // TypeOfSalonComboBox
+            // 
+            this.TypeOfSalonComboBox.FormattingEnabled = true;
+            this.TypeOfSalonComboBox.Items.AddRange(new object[] {
+            "1)Для курящих",
+            "2)Для не курящих"});
+            this.TypeOfSalonComboBox.Location = new System.Drawing.Point(88, 297);
+            this.TypeOfSalonComboBox.Name = "TypeOfSalonComboBox";
+            this.TypeOfSalonComboBox.Size = new System.Drawing.Size(159, 21);
+            this.TypeOfSalonComboBox.TabIndex = 17;
+            // 
+            // FlightNumberLabel
+            // 
+            this.FlightNumberLabel.AutoSize = true;
+            this.FlightNumberLabel.Location = new System.Drawing.Point(85, 241);
+            this.FlightNumberLabel.Name = "FlightNumberLabel";
+            this.FlightNumberLabel.Size = new System.Drawing.Size(74, 13);
+            this.FlightNumberLabel.TabIndex = 18;
+            this.FlightNumberLabel.Text = "Номер рейса";
+            // 
+            // TypeOfSalonLabel
+            // 
+            this.TypeOfSalonLabel.AutoSize = true;
+            this.TypeOfSalonLabel.Location = new System.Drawing.Point(85, 281);
+            this.TypeOfSalonLabel.Name = "TypeOfSalonLabel";
+            this.TypeOfSalonLabel.Size = new System.Drawing.Size(65, 13);
+            this.TypeOfSalonLabel.TabIndex = 19;
+            this.TypeOfSalonLabel.Text = "Тип салона";
+            // 
+            // итогDataSet
+            // 
+            this.итогDataSet.DataSetName = "итогDataSet";
+            this.итогDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // рейсыBindingSource
+            // 
+            this.рейсыBindingSource.DataMember = "Рейсы";
+            this.рейсыBindingSource.DataSource = this.итогDataSet;
+            // 
+            // рейсыTableAdapter
+            // 
+            this.рейсыTableAdapter.ClearBeforeFill = true;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 408);
+            this.ClientSize = new System.Drawing.Size(345, 406);
+            this.Controls.Add(this.TypeOfSalonLabel);
+            this.Controls.Add(this.FlightNumberLabel);
+            this.Controls.Add(this.TypeOfSalonComboBox);
+            this.Controls.Add(this.FlightNumberСomboBox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PhoneNumberTextBox);
@@ -204,6 +278,8 @@ namespace TicketSalesPanel.Forms
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о пасажире";
+            ((System.ComponentModel.ISupportInitialize)(this.итогDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.рейсыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +303,12 @@ namespace TicketSalesPanel.Forms
         private System.Windows.Forms.Label PhoneNumberLabel;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.ComboBox FlightNumberСomboBox;
+        private System.Windows.Forms.ComboBox TypeOfSalonComboBox;
+        private System.Windows.Forms.Label FlightNumberLabel;
+        private System.Windows.Forms.Label TypeOfSalonLabel;
+        private итогDataSet итогDataSet;
+        private System.Windows.Forms.BindingSource рейсыBindingSource;
+        private итогDataSetTableAdapters.РейсыTableAdapter рейсыTableAdapter;
     }
 }
