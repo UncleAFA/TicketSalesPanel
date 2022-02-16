@@ -27,9 +27,63 @@ namespace TicketSalesPanel.Forms
         {
             this.Close();
         }
-
+        public bool CheckCorrectInput()
+        {
+            if (NameTextBox.Text == "")
+            {
+                MessageBox.Show("Проверьте имя.");
+                return true;
+            }
+            if (SurnameTextBox.Text == "")
+            {
+                MessageBox.Show("Проверьте фамилию.");
+                return true;
+            }
+            if (MiddleNameTextBox.Text == "")
+            {
+                MessageBox.Show("Проверьте отчество.");
+                return true;
+            }
+            if (PassportSeriesTextBox.Text == "" | PassportSeriesTextBox.Text.Length != 4)
+            {
+                MessageBox.Show("Проверьте серию.");
+                return true;
+            }
+            if (PassportNumberTextBox.Text == "" | PassportNumberTextBox.Text.Length != 5)
+            {
+                MessageBox.Show("Проверьте Номер.");
+                return true;
+            }
+            if (ResidentialAddressTextBox.Text == "")
+            {
+                MessageBox.Show("Проверьте адрес.");
+                return true;
+            }
+            if (PhoneNumberTextBox.Text == "" | PhoneNumberTextBox.Text.Length != 9)
+            {
+                MessageBox.Show("Проверьте Номер телефона.");
+                return true;
+            }
+            if (FlightNumberСomboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Проверьте Номер рейса.");
+                return true;
+            }
+            if (TypeOfSalonComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Проверьте тип салона.");
+                return true;
+            }
+            return false;
+        }
         private void NextButton_Click(object sender, EventArgs e)
         {
+            if (CheckCorrectInput())
+            {
+                return;
+            }
+                
+            
             Passenger NewPassenger = new Passenger
             {
                 Name = NameTextBox.Text,
@@ -298,6 +352,11 @@ namespace TicketSalesPanel.Forms
 
             myConnection.Close();
             return SeatsArr;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Информация по заполнению формы: \n\nПоле Имя не может быть пустым \n\nПоле Фамилия не может быть пустым \n\nПоле Отчество не может быть пустым \n\nПоле Серия не может быть пустым и иметь меньше 4 чисел \n\nПоле Номер Паспорта не может быть пустым и иметь меньше 5 чисел \n\nПоле Адрес не может быть пустым \n\nПоле Номер телефона не может быть пустым и иметь меньше 9 чисел");
         }
     }
 }

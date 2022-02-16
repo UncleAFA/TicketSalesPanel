@@ -29,19 +29,20 @@ namespace TicketSalesPanel
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.SQLRequestsButton = new System.Windows.Forms.Button();
             this.RegistrationOfNewPassengerButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // SQLRequestsButton
             // 
-            this.button1.Location = new System.Drawing.Point(166, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 52);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Иное";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SQLRequestsButton.Location = new System.Drawing.Point(166, 12);
+            this.SQLRequestsButton.Name = "SQLRequestsButton";
+            this.SQLRequestsButton.Size = new System.Drawing.Size(132, 52);
+            this.SQLRequestsButton.TabIndex = 0;
+            this.SQLRequestsButton.Text = "Запросы";
+            this.SQLRequestsButton.UseVisualStyleBackColor = true;
+            this.SQLRequestsButton.Click += new System.EventHandler(this.SQLRequestsButton_Click);
             // 
             // RegistrationOfNewPassengerButton
             // 
@@ -72,7 +73,7 @@ namespace TicketSalesPanel
             this.ClientSize = new System.Drawing.Size(310, 163);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.RegistrationOfNewPassengerButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SQLRequestsButton);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(326, 202);
             this.MinimizeBox = false;
@@ -86,7 +87,7 @@ namespace TicketSalesPanel
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SQLRequestsButton;
         private System.Windows.Forms.Button RegistrationOfNewPassengerButton;
         private System.Windows.Forms.Button ExitButton;
     }

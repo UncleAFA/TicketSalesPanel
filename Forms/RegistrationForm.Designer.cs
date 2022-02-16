@@ -53,6 +53,7 @@ namespace TicketSalesPanel.Forms
             this.итогDataSet = new TicketSalesPanel.итогDataSet();
             this.рейсыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.рейсыTableAdapter = new TicketSalesPanel.итогDataSetTableAdapters.РейсыTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.итогDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.рейсыBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +118,9 @@ namespace TicketSalesPanel.Forms
             this.PassportSeriesLabel.AutoSize = true;
             this.PassportSeriesLabel.Location = new System.Drawing.Point(87, 124);
             this.PassportSeriesLabel.Name = "PassportSeriesLabel";
-            this.PassportSeriesLabel.Size = new System.Drawing.Size(41, 13);
+            this.PassportSeriesLabel.Size = new System.Drawing.Size(38, 13);
             this.PassportSeriesLabel.TabIndex = 6;
-            this.PassportSeriesLabel.Text = "Серия ";
+            this.PassportSeriesLabel.Text = "Серия";
             // 
             // PassportNumberTextBox
             // 
@@ -248,11 +249,22 @@ namespace TicketSalesPanel.Forms
             // 
             this.рейсыTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(273, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 406);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TypeOfSalonLabel);
             this.Controls.Add(this.FlightNumberLabel);
             this.Controls.Add(this.TypeOfSalonComboBox);
@@ -310,5 +322,6 @@ namespace TicketSalesPanel.Forms
         private итогDataSet итогDataSet;
         private System.Windows.Forms.BindingSource рейсыBindingSource;
         private итогDataSetTableAdapters.РейсыTableAdapter рейсыTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

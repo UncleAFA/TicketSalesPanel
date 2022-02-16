@@ -20,5 +20,11 @@ namespace TicketSalesPanel
             RegistrationForm registrationForm = new RegistrationForm();
             registrationForm.Show();
         }
+
+        private void SQLRequestsButton_Click(object sender, System.EventArgs e)
+        {
+            SQLRequestsForm sQLRequestsForm = new SQLRequestsForm();
+            sQLRequestsForm.Show();
+        }
     }
 }
