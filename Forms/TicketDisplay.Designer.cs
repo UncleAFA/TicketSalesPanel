@@ -45,12 +45,13 @@ namespace TicketSalesPanel
             // 
             // ExitButton
             // 
+            this.ExitButton.BackColor = System.Drawing.Color.SandyBrown;
             this.ExitButton.Location = new System.Drawing.Point(151, 427);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(200, 23);
             this.ExitButton.TabIndex = 0;
             this.ExitButton.Text = "Выход в главное меню";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // AirlineNameLabel
@@ -146,6 +147,7 @@ namespace TicketSalesPanel
             // DepartDateLabel
             // 
             this.DepartDateLabel.AutoSize = true;
+            this.DepartDateLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.DepartDateLabel.Location = new System.Drawing.Point(240, 241);
             this.DepartDateLabel.Name = "DepartDateLabel";
             this.DepartDateLabel.Size = new System.Drawing.Size(35, 13);
@@ -158,6 +160,7 @@ namespace TicketSalesPanel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TicketSalesPanel.Properties.Resources.ImagePass;
             this.ClientSize = new System.Drawing.Size(483, 462);
+            this.ControlBox = false;
             this.Controls.Add(this.DepartDateLabel);
             this.Controls.Add(this.NumPassLabel);
             this.Controls.Add(this.TypeSeatLabel);
@@ -171,6 +174,7 @@ namespace TicketSalesPanel
             this.Controls.Add(this.AirlineNameLabel);
             this.Controls.Add(this.ExitButton);
             this.Name = "TicketDisplay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketDisplay";
             this.ResumeLayout(false);
             this.PerformLayout();

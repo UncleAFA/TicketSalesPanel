@@ -54,8 +54,12 @@ namespace TicketSalesPanel.Forms
             this.рейсыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.рейсыTableAdapter = new TicketSalesPanel.итогDataSetTableAdapters.РейсыTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.FromLabel = new System.Windows.Forms.Label();
+            this.ToLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.итогDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.рейсыBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // NameLabel
@@ -172,22 +176,24 @@ namespace TicketSalesPanel.Forms
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(88, 343);
+            this.NextButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.NextButton.Location = new System.Drawing.Point(88, 452);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(159, 23);
             this.NextButton.TabIndex = 14;
             this.NextButton.Text = "Продолжить";
-            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.UseVisualStyleBackColor = false;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(88, 372);
+            this.BackButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.BackButton.Location = new System.Drawing.Point(88, 481);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(159, 23);
             this.BackButton.TabIndex = 15;
             this.BackButton.Text = "Вернуться в главное меню";
-            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // FlightNumberСomboBox
@@ -201,7 +207,7 @@ namespace TicketSalesPanel.Forms
             "ПЛ189",
             "ТК1408",
             "ЮТ246"});
-            this.FlightNumberСomboBox.Location = new System.Drawing.Point(88, 257);
+            this.FlightNumberСomboBox.Location = new System.Drawing.Point(88, 261);
             this.FlightNumberСomboBox.Name = "FlightNumberСomboBox";
             this.FlightNumberСomboBox.Size = new System.Drawing.Size(159, 21);
             this.FlightNumberСomboBox.TabIndex = 16;
@@ -212,7 +218,7 @@ namespace TicketSalesPanel.Forms
             this.TypeOfSalonComboBox.Items.AddRange(new object[] {
             "1)Для курящих",
             "2)Для не курящих"});
-            this.TypeOfSalonComboBox.Location = new System.Drawing.Point(88, 297);
+            this.TypeOfSalonComboBox.Location = new System.Drawing.Point(88, 406);
             this.TypeOfSalonComboBox.Name = "TypeOfSalonComboBox";
             this.TypeOfSalonComboBox.Size = new System.Drawing.Size(159, 21);
             this.TypeOfSalonComboBox.TabIndex = 17;
@@ -220,7 +226,7 @@ namespace TicketSalesPanel.Forms
             // FlightNumberLabel
             // 
             this.FlightNumberLabel.AutoSize = true;
-            this.FlightNumberLabel.Location = new System.Drawing.Point(85, 241);
+            this.FlightNumberLabel.Location = new System.Drawing.Point(85, 245);
             this.FlightNumberLabel.Name = "FlightNumberLabel";
             this.FlightNumberLabel.Size = new System.Drawing.Size(74, 13);
             this.FlightNumberLabel.TabIndex = 18;
@@ -229,7 +235,7 @@ namespace TicketSalesPanel.Forms
             // TypeOfSalonLabel
             // 
             this.TypeOfSalonLabel.AutoSize = true;
-            this.TypeOfSalonLabel.Location = new System.Drawing.Point(85, 281);
+            this.TypeOfSalonLabel.Location = new System.Drawing.Point(85, 390);
             this.TypeOfSalonLabel.Name = "TypeOfSalonLabel";
             this.TypeOfSalonLabel.Size = new System.Drawing.Size(65, 13);
             this.TypeOfSalonLabel.TabIndex = 19;
@@ -251,19 +257,51 @@ namespace TicketSalesPanel.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(273, 343);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.button1.Location = new System.Drawing.Point(273, 452);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 20;
             this.button1.Text = "?";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ToLabel);
+            this.panel1.Controls.Add(this.FromLabel);
+            this.panel1.Location = new System.Drawing.Point(12, 241);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(321, 146);
+            this.panel1.TabIndex = 22;
+            // 
+            // FromLabel
+            // 
+            this.FromLabel.AutoSize = true;
+            this.FromLabel.Location = new System.Drawing.Point(3, 57);
+            this.FromLabel.Name = "FromLabel";
+            this.FromLabel.Size = new System.Drawing.Size(46, 13);
+            this.FromLabel.TabIndex = 5;
+            this.FromLabel.Text = "Откуда:";
+            // 
+            // ToLabel
+            // 
+            this.ToLabel.AutoSize = true;
+            this.ToLabel.Location = new System.Drawing.Point(3, 100);
+            this.ToLabel.Name = "ToLabel";
+            this.ToLabel.Size = new System.Drawing.Size(34, 13);
+            this.ToLabel.TabIndex = 6;
+            this.ToLabel.Text = "Куда:";
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 406);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(345, 539);
+            this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TypeOfSalonLabel);
             this.Controls.Add(this.FlightNumberLabel);
@@ -285,6 +323,7 @@ namespace TicketSalesPanel.Forms
             this.Controls.Add(this.SurnameLabel);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistrationForm";
@@ -292,6 +331,8 @@ namespace TicketSalesPanel.Forms
             this.Text = "Информация о пасажире";
             ((System.ComponentModel.ISupportInitialize)(this.итогDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.рейсыBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +364,8 @@ namespace TicketSalesPanel.Forms
         private System.Windows.Forms.BindingSource рейсыBindingSource;
         private итогDataSetTableAdapters.РейсыTableAdapter рейсыTableAdapter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label FromLabel;
+        private System.Windows.Forms.Label ToLabel;
     }
 }

@@ -31,6 +31,7 @@ namespace TicketSalesPanel
             InfoDataGridView.Rows.Clear();
             InfoDataGridView.Columns.Clear();
 
+            label1.Text = "Описание: \nВыводит информацию о местах (где больше 8) на самолёте, отправленном в рейс после 19.06.21";
 
             var column1 = new DataGridViewColumn();
             column1.HeaderText = "№рейса"; //текст в шапке
@@ -93,6 +94,7 @@ namespace TicketSalesPanel
             InfoDataGridView.Rows.Clear();
             InfoDataGridView.Columns.Clear();
 
+            label1.Text = "Описание: \nВыводит информацию о российских аэропортах, где есть детская комната (+ рейсы с этого аэропорта после 18.06.21)";
 
             var column1 = new DataGridViewColumn();
             column1.HeaderText = "Назв_аэропорта"; //текст в шапке
@@ -169,6 +171,7 @@ namespace TicketSalesPanel
             InfoDataGridView.Rows.Clear();
             InfoDataGridView.Columns.Clear();
 
+            label1.Text = "Описание: \nВыводит информацию о рейсе и билете, стоимость которого меньше 13000";
 
             var column1 = new DataGridViewColumn();
             column1.HeaderText = "№Билета"; //текст в шапке
@@ -238,6 +241,7 @@ namespace TicketSalesPanel
             InfoDataGridView.Rows.Clear();
             InfoDataGridView.Columns.Clear();
 
+            label1.Text = "Описание: \nВыводит информацию о самолёте старше 2000-го года, направляющийся в Москву";
 
             var column1 = new DataGridViewColumn();
             column1.HeaderText = "Борт№"; //текст в шапке
@@ -319,6 +323,7 @@ namespace TicketSalesPanel
             InfoDataGridView.Rows.Clear();
             InfoDataGridView.Columns.Clear();
 
+            label1.Text = "Описание: \nВыводит информацию о российских аэропортах, включая рейсы из этих аэропортов и место их прибытия";
 
             var column1 = new DataGridViewColumn();
             column1.HeaderText = "Назв_аэропорта"; //текст в шапке

@@ -10,6 +10,34 @@ namespace TicketSalesPanel.Forms
         public RegistrationForm()
         {
             InitializeComponent();
+            FlightNumberСomboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+        }
+        void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FlightNumber = FlightNumberСomboBox.SelectedItem.ToString();
+            //MessageBox.Show(FlightNumber);
+
+            // поле - ссылка на экземпляр класса OleDbConnection для соединения с БД
+            OleDbConnection myConnection;
+            // создаем экземпляр класса OleDbConnection
+            myConnection = new OleDbConnection(connectString);
+
+
+            // открываем соединение с БД
+            myConnection.Open();
+            // текст запроса
+            string query = $"SELECT Аэропорт_отправления,Город_прибытия,Место_прибытия FROM Рейсы WHERE №рейса = '{FlightNumber}'";
+            // создаем объект OleDbCommand для выполнения запроса к БД MS Access
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            // получаем объект OleDbDataReader для чтения табличного результата запроса SELECT
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                FromLabel.Text = "Откуда: \n" + reader[0].ToString();
+                ToLabel.Text = $"Куда: \n{reader[1].ToString()}({reader[2].ToString()})";
+                
+            }
+            myConnection.Close();
         }
 
         private Pass NewPass = new Pass();
@@ -46,12 +74,12 @@ namespace TicketSalesPanel.Forms
             }
             if (PassportSeriesTextBox.Text == "" | PassportSeriesTextBox.Text.Length != 4)
             {
-                MessageBox.Show("Проверьте серию.");
+                MessageBox.Show("Проверьте серию паспорта.");
                 return true;
             }
             if (PassportNumberTextBox.Text == "" | PassportNumberTextBox.Text.Length != 5)
             {
-                MessageBox.Show("Проверьте Номер.");
+                MessageBox.Show("Проверьте Номер паспорта.");
                 return true;
             }
             if (ResidentialAddressTextBox.Text == "")

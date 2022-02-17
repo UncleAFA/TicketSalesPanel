@@ -36,26 +36,29 @@ namespace TicketSalesPanel
             // 
             // SQLRequestsButton
             // 
+            this.SQLRequestsButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.SQLRequestsButton.Location = new System.Drawing.Point(166, 12);
             this.SQLRequestsButton.Name = "SQLRequestsButton";
             this.SQLRequestsButton.Size = new System.Drawing.Size(132, 52);
             this.SQLRequestsButton.TabIndex = 0;
             this.SQLRequestsButton.Text = "Запросы";
-            this.SQLRequestsButton.UseVisualStyleBackColor = true;
+            this.SQLRequestsButton.UseVisualStyleBackColor = false;
             this.SQLRequestsButton.Click += new System.EventHandler(this.SQLRequestsButton_Click);
             // 
             // RegistrationOfNewPassengerButton
             // 
+            this.RegistrationOfNewPassengerButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RegistrationOfNewPassengerButton.Location = new System.Drawing.Point(12, 12);
             this.RegistrationOfNewPassengerButton.Name = "RegistrationOfNewPassengerButton";
             this.RegistrationOfNewPassengerButton.Size = new System.Drawing.Size(132, 52);
             this.RegistrationOfNewPassengerButton.TabIndex = 1;
             this.RegistrationOfNewPassengerButton.Text = "Регистрация нового пасажира";
-            this.RegistrationOfNewPassengerButton.UseVisualStyleBackColor = true;
+            this.RegistrationOfNewPassengerButton.UseVisualStyleBackColor = false;
             this.RegistrationOfNewPassengerButton.Click += new System.EventHandler(this.RegistrationOfNewPassengerButton_Click);
             // 
             // ExitButton
             // 
+            this.ExitButton.BackColor = System.Drawing.Color.SandyBrown;
             this.ExitButton.Location = new System.Drawing.Point(89, 99);
             this.ExitButton.MaximumSize = new System.Drawing.Size(132, 52);
             this.ExitButton.MinimumSize = new System.Drawing.Size(132, 52);
@@ -63,14 +66,16 @@ namespace TicketSalesPanel
             this.ExitButton.Size = new System.Drawing.Size(132, 52);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Выход из программы";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(310, 163);
+            this.ControlBox = false;
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.RegistrationOfNewPassengerButton);
             this.Controls.Add(this.SQLRequestsButton);

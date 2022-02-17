@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,10 +70,10 @@
     <Compile Include="Forms\TicketDisplay.Designer.cs">
       <DependentUpon>TicketDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLRequestsForm.cs">
+    <Compile Include="Forms\SQLRequestsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SQLRequestsForm.Designer.cs">
+    <Compile Include="Forms\SQLRequestsForm.Designer.cs">
       <DependentUpon>SQLRequestsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="итогDataSet.Designer.cs">
@@ -98,7 +100,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SQLRequestsForm.resx">
+    <EmbeddedResource Include="Forms\SQLRequestsForm.resx">
       <DependentUpon>SQLRequestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -127,7 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ImagePass.png" />
-    <Content Include="Задание.txt" />
     <Content Include="итог.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
